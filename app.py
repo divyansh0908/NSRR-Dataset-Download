@@ -10,9 +10,12 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import time
 import os
+from dotenv import load_dotenv
 
-myId='divyansh.anand.19c@iitram.ac.in'
-myPassword='Hardik@0908'	
+load_dotenv()
+
+myId=os.getenv("EMAIL")
+myPassword=os.getenv("PASSWORD")
 opt = Options()
 opt.add_argument('--disable-blink-features=AutomationControlled')
 opt.add_argument('--start-maximized')
